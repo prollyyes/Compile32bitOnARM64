@@ -17,8 +17,11 @@ Then, open Docker Desktop -> Settings -> Docker Engine, and set the `` "experime
 
 
 
-Now, open a Terminal window and navigate to the directory where you downloaded the Dockerfile, and paste this: `docker buildx build --platform linux/386 --load -t ia32-assembly . `.
+Now, open a Terminal window and navigate to the directory where you downloaded the Dockerfile, and paste this: `docker buildx build --platform linux/386 --load -t ia32-assembly .`
 
-After that, run the container: `docker run -d -it --name ia32onARM -v ~/Path/to/directory/:/workspace ia32-assembly `, and enter the correct path to the directory in which you want to save your files. They will be accessible inside the container, allowing you to easily edit and compile files without using VSC, which doesn't support i686.
+After that, run the container: `docker run -d -it --name ia32onARM -v ~/Path/to/directory/:/workspace ia32-assembly` and enter the correct path to the directory in which you want to save your files. They will be accessible inside the container, allowing you to easily edit and compile files without using VSC, which doesn't support i686.
 
-Lastly, interact with the container via the terminal through: `docker exec -it ia32onARM bash `.
+Lastly, interact with the container via the terminal through: `docker exec -it ia32onARM bash`.
+
+
+### NOTE: Sadly, QEMU doesn't implement ptrace, hence making debugging using Valgrind and GDB impossible in the current version of my Container
