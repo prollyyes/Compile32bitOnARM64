@@ -6,7 +6,7 @@ After a bit of thought I was able to find this workaround to cross compile 32 bi
 ## GUIDE
 ### Disclaimer: this guide uses Docker Desktop for ease of use.
 
-First, make sure to install the Docker CLI plugin Buildx (e.g. using _Homebrew_).
+First, make sure to install the Docker CLI plugin Buildx (e.g. using _Homebrew_, for which the recipe is `brew install docker-buildx`).
 
 Then, open Docker Desktop -> Settings -> Docker Engine, and set the `` "experimental" `` flag to true. It should look something like this:
 
